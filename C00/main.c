@@ -70,9 +70,9 @@ void	test07()
 	printf("\n");
 	ft_putnbr(123);
 	printf("\n");
-	ft_putnbr(123456789);
+	ft_putnbr(-2147483648);
 	printf("\n");
-	ft_putnbr(-123456789);
+	ft_putnbr(2147483647);
 	printf("\n");
 	ft_putnbr(-159753);
 	printf("\n\nFinished testing printing numbers.\n");
