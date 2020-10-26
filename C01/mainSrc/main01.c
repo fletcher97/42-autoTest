@@ -14,7 +14,7 @@ int main()
 	*******nbr = malloc(sizeof(int********));
 	********nbr = malloc(sizeof(int*********));
 
-	ft_utltimate_ft(nbr);
+	ft_ultimate_ft(nbr);
 	printf("%d",*********nbr);
 
 	free(********nbr);
