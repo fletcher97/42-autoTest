@@ -20,4 +20,4 @@ gcc -Wall -Werror -Wextra ~/42-autoTest/C01/mainSrc/main05.c ex05/ft_putstr.c -o
 gcc -Wall -Werror -Wextra ~/42-autoTest/C01/mainSrc/main06.c ex06/ft_strlen.c -o test/ex06 -I ~/42-autoTest/C01/mainInc && ./test/ex06
 gcc -Wall -Werror -Wextra ~/42-autoTest/C01/mainSrc/main07.c ex07/ft_rev_int_tab.c -o test/ex07 -I ~/42-autoTest/C01/mainInc && ./test/ex07
 gcc -Wall -Werror -Wextra ~/42-autoTest/C01/mainSrc/main08.c ex08/ft_sort_int_tab.c -o test/ex08 -I ~/42-autoTest/C01/mainInc && ./test/ex08
-echo 'All tests done.\n'
+echo '\nAll tests done.\n'
