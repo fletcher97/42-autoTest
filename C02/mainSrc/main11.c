@@ -2,9 +2,19 @@
 
 int main()
 {
-	char *str = "Hello.\n These are special char: \n\t\b \n\n";
+	char *str = malloc(256);
 	printf("\n");
+
+	for(int i = 0; i < 256; i++)
+	{
+		str[i] = (i + 1) % 256;
+	}
+	
 	ft_putstr_non_printable(str);
+	
 	printf("\n");
+	
+	free(str);
+
 	return 0;
 }
