@@ -1,5 +1,5 @@
-#if !defined(MAIN07_H)
-#define MAIN07_H
+#if !defined(MAIN05_H)
+#define MAIN05_H
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -7,4 +7,4 @@
 
 int	ft_atoi_base(char *nbr, char *base);
 
-#endif // MAIN07_H
+#endif // MAIN05_H

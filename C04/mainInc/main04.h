@@ -1,5 +1,5 @@
-#if !defined(MAIN07_H)
-#define MAIN07_H
+#if !defined(MAIN04_H)
+#define MAIN04_H
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -7,4 +7,4 @@
 
 void	ft_putnbr_base(int nbr, char *base);
 
-#endif // MAIN07_H
+#endif // MAIN04_H

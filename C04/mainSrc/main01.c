@@ -1,8 +1,8 @@
-#include "main05.h"
+#include "main01.h"
 
 int main()
 {
-	printf("\nTesting 05:\n\n");
+	printf("\nTesting 01:\n\n");
 	char* str = "abc 123 >.<";
 	ft_putstr(str);
 	printf("\n\nFinished testing string printing. expected \"abc 123 >.<\"\n");

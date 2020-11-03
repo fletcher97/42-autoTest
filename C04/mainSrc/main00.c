@@ -1,8 +1,8 @@
-#include "main06.h"
+#include "main00.h"
 
 int main()
 {
-	printf("\nTesting 06:\n\n");
+	printf("\nTesting 00:\n\n");
 	printf("%d\n", ft_strlen(""));
 	printf("%d\n", ft_strlen("123123123123123123123123123123123123123123123123123"));
 	printf("%d\n", ft_strlen("abcd45687952365896547874589652"));

@@ -1,8 +1,8 @@
-#include "main07.h"
+#include "main02.h"
 
 int main()
 {
-	printf("\nTesting 07:\n\n0: ");
+	printf("\nTesting 02:\n\n0: ");
 	ft_putnbr(0);
 	printf("\n123: ");
 	ft_putnbr(123);
