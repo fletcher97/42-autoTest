@@ -14,7 +14,6 @@ int main()
 	printf("\nExpected: %d\nGot: %d\n", atoi(n), ft_atoi(n));
 	n = "2147483647";
 	printf("\nExpected: %d\nGot: %d\n", atoi(n), ft_atoi(n));
-	free(n);
 
 	printf("\n\nFinished testing converting strings to numbers.\n");
 
