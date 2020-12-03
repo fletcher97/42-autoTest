@@ -89,7 +89,7 @@ test_mandatory() {
 	return 0
 }
 
-echo -e "${fg_yellow}Script made by mgueifao.${c_reset}"
+echo -e "${fg_yellow}Script made by clara & fheaton.${c_reset}"
 echo "Testing libft."
 
 if [[ -d $path ]]; then
