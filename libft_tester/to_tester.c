@@ -15,7 +15,7 @@ test_t *test_toupper(data_t *p)
 	if (ft_toupper(*c) != toupper(*c)){
 		ret->code = 1;
 		t = m_itoa(*c);
-		n = m_strcat("Error detecting type of ", t);
+		n = m_strcat("Error converting ascii:", t);
 		free(t);
 		a = m_strcat(n, ".\n\tFunction returned: ");
 		free(n);
@@ -47,7 +47,7 @@ test_t *test_tolower(data_t *p)
 	if (ft_tolower(*c) != tolower(*c)){
 		ret->code = 1;
 		t = m_itoa(*c);
-		n = m_strcat("Error detecting type of ", t);
+		n = m_strcat("Error converting ascii:", t);
 		free(t);
 		a = m_strcat(n, ".\n\tFunction returned: ");
 		free(n);
