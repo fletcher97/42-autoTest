@@ -12,7 +12,7 @@ test_t *test_toupper(data_t *p)
 	test_t *ret;
 	if (!(ret = malloc(sizeof(test_t))))
 		return NULL;
-	if (!ft_toupper(*c) != !toupper(*c)){
+	if (ft_toupper(*c) != toupper(*c)){
 		ret->code = 1;
 		t = m_itoa(*c);
 		n = m_strcat("Error detecting type of ", t);
@@ -44,7 +44,7 @@ test_t *test_tolower(data_t *p)
 	test_t *ret;
 	if (!(ret = malloc(sizeof(test_t))))
 		return NULL;
-	if (!ft_tolower(*c) != !tolower(*c)){
+	if (ft_tolower(*c) != tolower(*c)){
 		ret->code = 1;
 		t = m_itoa(*c);
 		n = m_strcat("Error detecting type of ", t);
