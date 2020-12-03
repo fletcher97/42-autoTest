@@ -18,13 +18,13 @@
 #define GREEN "\033[32m"
 #define YELLOW "\033[33m"
 
-typedef struct test_s
+typedef struct	test_s
 {
 	int code;
 	char *error;
-}			test_t;
+}				test_t;
 
-typedef struct data_s
+typedef struct	data_s
 {
 	void *tests;
 	void *results;
@@ -33,12 +33,12 @@ typedef struct data_s
 
 typedef test_t *(*test_f_t)(void *);
 
-typedef struct test_fn_s
+typedef struct	test_fn_s
 {
 	test_f_t function;
 	char *name;
 	void *data;
-}			test_fn_t;
+}				test_fn_t;
 
 int test(test_f_t f, data_t *p);
 
