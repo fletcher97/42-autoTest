@@ -15,7 +15,7 @@ test_t *test_isalnum(data_t *p)
 	if (!ft_isalnum(*c) != !isalnum(*c)){
 		ret->code = 1;
 		t = m_itoa(*c);
-		n = m_strcat("Error detecting type of ", t);
+		n = m_strcat("Error detecting type of: ", t);
 		free(t);
 		a = m_strcat(n, ".\n\tFunction returned: ");
 		free(n);
@@ -28,8 +28,8 @@ test_t *test_isalnum(data_t *p)
 		t = m_itoa(isalnum(*c));
 		n = m_strcat(a, t);
 		free(t);
-		ret->error = m_strcat(n, ".");
 		free(a);
+		ret->error = m_strcat(n, ".");
 		free(n);
 	} else {
 		ret->code = 0;
@@ -47,7 +47,7 @@ test_t *test_isalpha(data_t *p)
 	if (!ft_isalpha(*c) != !isalpha(*c)){
 		ret->code = 1;
 		t = m_itoa(*c);
-		n = m_strcat("Error detecting type of ", t);
+		n = m_strcat("Error detecting type of: ", t);
 		free(t);
 		a = m_strcat(n, ".\n\tFunction returned: ");
 		free(n);
@@ -60,8 +60,8 @@ test_t *test_isalpha(data_t *p)
 		t = m_itoa(isalpha(*c));
 		n = m_strcat(a, t);
 		free(t);
-		ret->error = m_strcat(n, ".");
 		free(a);
+		ret->error = m_strcat(n, ".");
 		free(n);
 	} else {
 		ret->code = 0;
