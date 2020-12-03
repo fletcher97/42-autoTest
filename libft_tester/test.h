@@ -31,7 +31,7 @@ typedef struct	data_s
 }				data_t;
 
 
-typedef test_t *(*test_f_t)(void *);
+typedef test_t *(*test_f_t)(data_t *);
 
 typedef struct	test_fn_s
 {
