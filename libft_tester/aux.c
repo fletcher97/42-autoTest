@@ -37,7 +37,7 @@ int	of_check(size_t s, size_t n)
 	return ((m / s) < n);
 }
 
-char *hex_conv(void *p, int n)
+char *hex_conv(void *p, size_t n)
 {
 	u_char *v = (u_char*)p;
 	char *ret, *a;
@@ -47,7 +47,7 @@ char *hex_conv(void *p, int n)
 	ret[1] = '\t';
 	ret[2] = 0;
 	char hex[3];
-	for(int i = 0; i < n; i++)
+	for(size_t i = 0; i < n; i++)
 	{
 		sprintf(hex, "%02x", v[i]);
 		a = m_strcat(ret, hex);
@@ -63,6 +63,8 @@ char *hex_conv(void *p, int n)
 			free(ret);
 			ret = a;
 		}
+		if(i == (size_t)-1)
+			break;
 	}
 	return ret;
 }
