@@ -95,6 +95,7 @@ echo "Testing libft."
 if [[ -d $path ]]; then
 	test_norm
 	test_mandatory
+	rm -f tester
 else
 	error "The path \"${path}\" does not exist or is not a directory."
 fi

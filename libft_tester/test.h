@@ -13,10 +13,15 @@
 		keep = !keep, count++) \
 		for(item = (array) + count; keep; keep = !keep)
 
+// #define malloc(x) 0
+#define ERROR_MESSAGE "ERROR: Failed to allocate memorry to test"
+
 #define CLEAR "\033[0m"
+#define BLACK "\033[30m"
 #define RED "\033[31m"
 #define GREEN "\033[32m"
 #define YELLOW "\033[33m"
+#define RED_BG "\033[41m"
 
 typedef struct	test_s
 {
