@@ -16,6 +16,8 @@
 // #define malloc(x) 0
 #define ERROR_MESSAGE "ERROR: Failed to allocate memorry to test"
 
+#pragma GCC diagnostic ignored "-Wdangling-else"
+
 #define CLEAR "\033[0m"
 #define BLACK "\033[30m"
 #define RED "\033[31m"
