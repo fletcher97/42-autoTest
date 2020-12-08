@@ -88,7 +88,7 @@ void test_single()
 		printf("%s%s%s %s.%s\n", BLACK, RED_BG, ERROR_MESSAGE, "bzero", CLEAR);
 		goto calloc;
 	}
-	char **bzero_results = malloc(sizeof(char *) * 9);
+	char **bzero_results;
 	if(!(bzero_results = malloc(sizeof(char *) * 9)))
 	{
 		printf("%s%sERROR: Failed to allocate memorry to test bzero.%s\n", BLACK, RED_BG, CLEAR);
