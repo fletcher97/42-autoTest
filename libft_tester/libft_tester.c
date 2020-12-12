@@ -60,8 +60,8 @@ void test_str()
 		data_t *temp;
 		if(!(temp = malloc(sizeof(data_t)))){
 			printf("%s%sERROR: Failed to allocate memory to test strlen.%s\n", BLACK, RED_BG, CLEAR);
-				errors++;
-				continue;
+			errors++;
+			continue;
 		}
 		temp->tests = strlen_tests[i];
 		errors += test(test_strlen, temp);
@@ -126,6 +126,10 @@ void test_str()
 		free(temp1);
 		free(temp);
 	}
+	if(!errors)
+		printf("%sOK: All tests passed for strlcpy.%s\n", GREEN, CLEAR);
+	else
+		printf("%sINFO: a total of %d errors were detected in strlcpy.%s\n", GREEN, errors, CLEAR);
 	/*strlcat*/
 	printf("%sINFO: testing strlcat.%s\n", GREEN, CLEAR);
 	char strlcat_tests[8][2][21] = {{"abc","bca"}, {"\n","\r"}, {"hello","hella"}, {"",""}, {"hello this is a test","hello thi\n is a test"}, {"tests","tests"}, {"there is a test here",""}, {"\x82\x81\xa3","\x02\x01\x23"}};
@@ -181,10 +185,14 @@ void test_str()
 		free(temp1);
 		free(temp);
 	}
+	if(!errors)
+		printf("%sOK: All tests passed for strlcat.%s\n", GREEN, CLEAR);
+	else
+		printf("%sINFO: a total of %d errors were detected in strlcat.%s\n", GREEN, errors, CLEAR);
 	/*strchr*/
 	printf("%sINFO: testing strchr.%s\n", GREEN, CLEAR);
 	char strchr_tests[8][21] = {"a", "\r", "hella", "", "hello thi\n is a", "tests", "bcd", "\x82\x81\xa3"};
-	char strchr_tests_chr[8] = {"a", "\r", "4", "a", "", "t", "z", "\x81"};
+	char strchr_tests_chr[8] = {'a', '\r', '4', 'a', '\0', 't', 'z', '\x81'};
 	errors = 0;
 	for (int i = 0; i < 8; i++)
 	{
@@ -226,13 +234,13 @@ void test_str()
 		free(temp);
 	}
 	if(!errors)
-		printf("%sOK: All tests passed for strlen.%s\n", GREEN, CLEAR);
+		printf("%sOK: All tests passed for strchr.%s\n", GREEN, CLEAR);
 	else
-		printf("%sINFO: a total of %d errors were detected in strlen.%s\n", GREEN, errors, CLEAR);
+		printf("%sINFO: a total of %d errors were detected in strchr.%s\n", GREEN, errors, CLEAR);
 	/*strrchr*/
 	printf("%sINFO: testing strrchr.%s\n", GREEN, CLEAR);
 	char strrchr_tests[8][21] = {"a", "\r", "hella", "", "hello thi\n is a", "tests", "bcd", "\x82\x81\xa3"};
-	char strrchr_tests_chr[8] = {"a", "\r", "4", "a", "", "t", "z", "\x81"};
+	char strrchr_tests_chr[8] = {'a', '\r', '4', 'a', '\0', 't', 'z', '\x81'};
 	errors = 0;
 	for (int i = 0; i < 8; i++)
 	{
@@ -272,6 +280,11 @@ void test_str()
 		free(temp1->content);
 		free(temp1);
 		free(temp);
+	}
+	if(!errors)
+		printf("%sOK: All tests passed for strrchr.%s\n", GREEN, CLEAR);
+	else
+		printf("%sINFO: a total of %d errors were detected in strrchr.%s\n", GREEN, errors, CLEAR);
 	/*strnstr*/
 	printf("%sINFO: testing strnstr.%s\n", GREEN, CLEAR);
 	char strnstr_tests[8][2][21] = {{"testing program","m"}, {"\ravs","\r"}, {"hello","ll"}, {"",""}, {"hello this is a test","thi\n"}, {"tests","t"}, {"abc","d"}, {"\x82\x81\xa3","\x02\x01\x23"}, {"\x82\x81\xa3","\x82"}};
@@ -327,6 +340,10 @@ void test_str()
 		free(temp1);
 		free(temp);
 	}
+	if(!errors)
+		printf("%sOK: All tests passed for strnstr.%s\n", GREEN, CLEAR);
+	else
+		printf("%sINFO: a total of %d errors were detected in strnstr.%s\n", GREEN, errors, CLEAR);
 	/*strncmp*/
 	printf("%sINFO: testing strncmp.%s\n", GREEN, CLEAR);
 	char strncmp_tests[8][2][21] = {{"a","b"}, {"\r","\r"}, {"hello","hella"}, {"",""}, {"hello this is a test","hello thi\n is a"}, {"tests","tests"}, {"abc","bcd"}, {"\x82\x81\xa3","\x02\x01\x23"}};
@@ -383,9 +400,9 @@ void test_str()
 		free(temp);
 	}
 	if(!errors)
-		printf("%sOK: All tests passed for strlen.%s\n", GREEN, CLEAR);
+		printf("%sOK: All tests passed for strncmp.%s\n", GREEN, CLEAR);
 	else
-		printf("%sINFO: a total of %d errors were detected in strlen.%s\n", GREEN, errors, CLEAR);
+		printf("%sINFO: a total of %d errors were detected in strncmp.%s\n", GREEN, errors, CLEAR);
 	/*strjoin*/
 	printf("%sINFO: testing strjoin.%s\n", GREEN, CLEAR);
 	char strjoin_tests[8][2][21] = {{"abc","bca","abcbca"}, {"\n","\r","\n\r"}, {"hello","hella","hellohella"}, {"","",""}, {"hello this is a test","hello thi\n is a test","hello this is a testhello thi\n is a test"}, {"tests","tests","tests"}, {"there is a test here","","there is a test here"}, {"\x82\x81\xa3","\x02\x01\x23","\x82\x81\xa3\x02\x01\x23"}};
@@ -439,7 +456,103 @@ void test_str()
 		free(temp1->content);
 		free(temp1);
 		free(temp);
+	}
+	if(!errors)
+		printf("%sOK: All tests passed for strjoin.%s\n", GREEN, CLEAR);
+	else
+		printf("%sINFO: a total of %d errors were detected in strjoin.%s\n", GREEN, errors, CLEAR);
 	/*strtrim*/
+	printf("%sINFO: testing strtrim.%s\n", GREEN, CLEAR);
+	char strtrim_tests[8][2][21] = {{"  abc  ","abc"}, {"\n",""}, {"\nhello\n","hello"}, {"",""}, {"hel\vlo","hel\vlo"}, {"\r\ttests\v","tests"}, {"test","test"}, {"\x82\x81\xa3","\x82\x81\xa3"}};
+	errors = 0;
+	for (int i = 0; i < 8; i++)
+	{
+		data_t *temp;
+		if(!(temp = malloc(sizeof(data_t)))){
+			printf("%s%sERROR: Failed to allocate memory to test strtrim.%s\n", BLACK, RED_BG, CLEAR);
+			errors++;
+			continue;
+		}
+		t_list *temp1;
+		if(!(temp1 = malloc(sizeof(t_list)))){
+			printf("%s%sERROR: Failed to allocate memory to test strtrim.%s\n", BLACK, RED_BG, CLEAR);
+			free(temp);
+			errors++;
+			continue;
+		}
+		if(!(temp1->content = malloc(sizeof(t_list)))){
+			printf("%s%sERROR: Failed to allocate memory to test strtrim.%s\n", BLACK, RED_BG, CLEAR);
+			free(temp1);
+			free(temp);
+			errors++;
+			continue;
+		}
+		if(!(temp1->next->content = malloc(sizeof(t_list)))){
+			printf("%s%sERROR: Failed to allocate memory to test strtrim.%s\n", BLACK, RED_BG, CLEAR);
+			free(temp1->content);
+			free(temp1);
+			free(temp);
+			errors++;
+			continue;
+		}
+		temp1->content = strtrim_tests[i][1];
+		temp1->next->content = strtrim_tests[i][2];
+		temp->tests = temp1;
+		errors += test(test_strtrim, temp);
+		free(temp1->next->content);
+		free(temp1->content);
+		free(temp1);
+		free(temp);
+	}
+	if(!errors)
+		printf("%sOK: All tests passed for strtrim.%s\n", GREEN, CLEAR);
+	else
+		printf("%sINFO: a total of %d errors were detected in strtrim.%s\n", GREEN, errors, CLEAR);
+	/*strdup*/
+	printf("%sINFO: testing strdup.%s\n", GREEN, CLEAR);
+	char strdup_tests[8][21] = {"abc", "\n", "hello", "", "hel\vlo", "\r\ttests\v", "test", "\x82\x81\xa3"};
+	errors = 0;
+	for (int i = 0; i < 8; i++)
+	{
+		data_t *temp;
+		if(!(temp = malloc(sizeof(data_t)))){
+			printf("%s%sERROR: Failed to allocate memory to test strdup.%s\n", BLACK, RED_BG, CLEAR);
+			errors++;
+			continue;
+		}
+		t_list *temp1;
+		if(!(temp1 = malloc(sizeof(t_list)))){
+			printf("%s%sERROR: Failed to allocate memory to test strdup.%s\n", BLACK, RED_BG, CLEAR);
+			free(temp);
+			errors++;
+			continue;
+		}
+		if(!(temp1->content = malloc(sizeof(t_list)))){
+			printf("%s%sERROR: Failed to allocate memory to test strdup.%s\n", BLACK, RED_BG, CLEAR);
+			free(temp1);
+			free(temp);
+			errors++;
+			continue;
+		}
+		if(!(temp1->next->content = malloc(sizeof(t_list)))){
+			printf("%s%sERROR: Failed to allocate memory to test strdup.%s\n", BLACK, RED_BG, CLEAR);
+			free(temp1->content);
+			free(temp1);
+			free(temp);
+			errors++;
+			continue;
+		}
+		temp1->content = strdup_tests[i];
+		temp->tests = temp1;
+		errors += test(test_strdup, temp);
+		free(temp1->content);
+		free(temp1);
+		free(temp);
+	}
+	if(!errors)
+		printf("%sOK: All tests passed for strdup.%s\n", GREEN, CLEAR);
+	else
+		printf("%sINFO: a total of %d errors were detected in strdup.%s\n", GREEN, errors, CLEAR);
 }
 
 int main()
