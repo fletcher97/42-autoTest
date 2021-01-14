@@ -17,7 +17,7 @@ gcc -Wall -Werror -Wextra ~/42-autoTest/piscine_tester/C05/mainSrc/main02.c ex02
 gcc -Wall -Werror -Wextra ~/42-autoTest/piscine_tester/C05/mainSrc/main03.c ex03/*.c -o test/ex03 -I ~/42-autoTest/piscine_tester/C05/mainInc && ./test/ex03
 gcc -Wall -Werror -Wextra ~/42-autoTest/piscine_tester/C05/mainSrc/main04.c ex04/*.c -o test/ex04 -I ~/42-autoTest/piscine_tester/C05/mainInc && ./test/ex04
 gcc -Wall -Werror -Wextra ~/42-autoTest/piscine_tester/C05/mainSrc/main05.c ex05/*.c -o test/ex05 -I ~/42-autoTest/piscine_tester/C05/mainInc && ./test/ex05
-gcc -Wall -Werror -Wextra ~/42-autoTest/piscine_tester/C05/mainSrc/main06.c ex05/*.c -o test/ex06 -I ~/42-autoTest/piscine_tester/C05/mainInc && ./test/ex06
-gcc -Wall -Werror -Wextra ~/42-autoTest/piscine_tester/C05/mainSrc/main07.c ex05/*.c -o test/ex07 -I ~/42-autoTest/piscine_tester/C05/mainInc && ./test/ex07
-gcc -Wall -Werror -Wextra ~/42-autoTest/piscine_tester/C05/mainSrc/main08.c ex05/*.c -o test/ex08 -I ~/42-autoTest/piscine_tester/C05/mainInc && ./test/ex08 > test/queens && diff test/queens ~/42-autoTest/piscine_tester/C05/queens
+gcc -Wall -Werror -Wextra ~/42-autoTest/piscine_tester/C05/mainSrc/main06.c ex06/*.c -o test/ex06 -I ~/42-autoTest/piscine_tester/C05/mainInc && ./test/ex06
+gcc -Wall -Werror -Wextra ~/42-autoTest/piscine_tester/C05/mainSrc/main07.c ex07/*.c -o test/ex07 -I ~/42-autoTest/piscine_tester/C05/mainInc && ./test/ex07
+gcc -Wall -Werror -Wextra ~/42-autoTest/piscine_tester/C05/mainSrc/main08.c ex08/*.c -o test/ex08 -I ~/42-autoTest/piscine_tester/C05/mainInc && ./test/ex08 > test/queens && diff test/queens ~/42-autoTest/piscine_tester/C05/queens
 echo '\nAll tests done.\n'
