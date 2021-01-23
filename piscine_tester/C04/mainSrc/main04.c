@@ -16,8 +16,8 @@ int main()
 	fflush(stdout);
 	ft_putnbr_base(2730, base);
 
-	strcpy(base, "0123456789abcdef");
-	printf("\nExpected fafabcd159, got: ");
+	strcpy(base, "0123456789ABCDEF");
+	printf("\nExpected FBCD159, got: ");
 	fflush(stdout);
 	ft_putnbr_base(264032601, base);
 
